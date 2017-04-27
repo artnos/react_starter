@@ -8,23 +8,32 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
   },
+  // resolve: {
+  //   extensions: ['', '.js', '.jsx', '.json']
+  // },
   module:{
   	 rules: [
      	{
-            test: /\.scss$/, 
+     		test: /\.scss$/, 
             use: ExtractTextPlugin.extract({
-                fallbackLoader: 'style-loader',
-                loader: ['css-loader','sass-loader'],
+                fallback: 'style-loader',
+                use: ['css-loader','sass-loader'],
                 publicPath: '/dist'
-            })
-        }
+            }),            
+        },
+        { test: /\.js$/, exclude: /(node_modules)/, use: ["babel-loader"] },
+        // {
+        //        test: /\.jsx?$/,
+        //        exclude: /node_modules/,
+        //        loaders: ["babel-loader"]
+        //      }
   	]
   },
   devServer:{
   	 contentBase: path.join(__dirname, "dist"),
   	 compress: true,
   	 port: 9000,
-  	 stats: 'errors-only',
+  	 //stats: 'errors-only',
   	 open: true
   },
   plugins: [
@@ -47,3 +56,4 @@ module.exports = {
 
 
  };
+
