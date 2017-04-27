@@ -1,5 +1,5 @@
 ## Usage
-1. `git clone https://github.com/michaelcheng429/react-tutorial-todos`
+1. `git clone https://github.com/artnos/webpack_react_babel_starter.git`
 2. `npm install`
 3. `npm start`
 
