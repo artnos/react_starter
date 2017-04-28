@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "dev": "webpack -d --watch",
-    "prod": "webpack -p"
+    "prod": "NODE_ENV=production webpack -p"
   },
   "author": "Art Sir",
   "license": "ISC",
