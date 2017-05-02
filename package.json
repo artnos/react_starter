@@ -25,6 +25,7 @@
     "image-loader": "0.0.1",
     "image-webpack-loader": "^3.3.0",
     "node-sass": "^4.5.2",
+    "purifycss-webpack": "^0.6.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "rimraf": "^2.6.1",

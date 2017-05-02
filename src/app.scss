@@ -4,5 +4,12 @@ body{
 	background-position: center center ;
 	p{
 		color: blue;
+		&.dog{
+			color: yellow;
+		}
 	}
+}
+
+.extra{
+	color:green;
 }

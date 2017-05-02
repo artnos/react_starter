@@ -1,11 +1,15 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var webpack = require('webpack')
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack')
 
-var isProd = process.env.NODE_ENV === 'production' // true or false
-var cssDev = ['style-loader', 'css-loader', 'sass-loader?sourceMap']
-var cssProd = ExtractTextPlugin.extract({
+const glob = require('glob');
+const path = require('path');
+const PurifyCSSPlugin = require('purifycss-webpack');
+
+
+const isProd = process.env.NODE_ENV === 'production' // true or false
+const cssDev = ['style-loader', 'css-loader', 'sass-loader?sourceMap']
+const cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
   use: ['css-loader', 'sass-loader'],
   publicPath: '/'
@@ -34,7 +38,7 @@ module.exports = {
         {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 use: [
-                  'file-loader?name=img/[name].[ext]',
+                  'file-loader?name=img/[hash:12].[ext]',
                   'image-webpack-loader?bypassOnDebug'
                 ]
         }
@@ -70,7 +74,13 @@ module.exports = {
 	    allChunks: true
         }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new PurifyCSSPlugin({
+      // Give paths to parse for rules. These should be absolute!
+      paths: glob.sync(path.join(__dirname, 'src/*.js')),
+      minimize: true
+    })
+
     ]
 
 
