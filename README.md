@@ -12,5 +12,4 @@ Will start a server and all changes won't be written to dist.
 Requires webpack-dev-server globally to run npm start  
 `npm i -g webpack-dev-server`
 
-It should automatically open itself, if you run into an error on npm start.  
-Try change the port number in your webpack.config.js
+It should automatically open itself

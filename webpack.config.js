@@ -4,17 +4,21 @@ var webpack = require('webpack')
 const path = require('path');
 
 var isProd = process.env.NODE_ENV === 'production' // true or false
-var cssDev = ['style-loader', 'css-loader', 'sass-loader']
+var cssDev = ['style-loader', 'css-loader', 'sass-loader?sourceMap']
 var cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
-  loader: ['css-loader', 'sass-loader'],
-  publicPath: '/dist'
+  use: ['css-loader', 'sass-loader'],
+  publicPath: '/'
 })
+
+
+
+
 var cssConfig = isProd ? cssProd : cssDev;
 module.exports = {
   entry: "./src/app.js",
    output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/'),
     filename: '[name].bundle.js'
   },
   // resolve: {
@@ -27,6 +31,13 @@ module.exports = {
             use: cssConfig,            
         },
         { test: /\.js$/, exclude: /node_modules/, use: ["babel-loader"] },
+        {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [
+                  'file-loader?name=img/[name].[ext]',
+                  'image-webpack-loader?bypassOnDebug'
+                ]
+        }
         // {
         //        test: /\.jsx?$/,
         //        exclude: /node_modules/,
@@ -37,7 +48,7 @@ module.exports = {
   devServer:{
   	 contentBase: path.join(__dirname, "dist"),
   	 compress: true,
-  	 port: 1234,
+  	 //port: 1234,
   	 //stats: 'errors-only',
   	 hot:true,
      open: true,
