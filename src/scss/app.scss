@@ -1,12 +1,11 @@
+@import 'settings';
+
 body{
 	background-color: green;
-	background-image: url("img/fpoBG.png");
+	background-image: url("../img/fpoBG.png");
 	background-position: center center ;
 	p{
-		color: blue;
-		&.dog{
-			color: yellow;
-		}
+		color: $blue;
 	}
 }
 
