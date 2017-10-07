@@ -4,10 +4,9 @@
   "description": "start file webpack",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "dev": "webpack -d --watch",
-    "prod": "npm run clean && NODE_ENV=production webpack -p",
-    "clean": "rimraf ./dist/*"
+    "start": "node_modules/.bin/webpack-dev-server -d --env.development",
+    "dev": "node_modules/.bin/webpack-dev-server -d --env.development",
+    "prod": "rm -rf ./dist/* && webpack -p --env.production"
   },
   "author": "Art Sir",
   "license": "ISC",
