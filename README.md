@@ -22,6 +22,7 @@ Must be installed globally.
 
 ### Optional Packages
 
+
 `redux` store for large Apps.  
 `redux-form` is a great library to handle forms  
 `redux-thunk` middleware to handle async calls
