@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './js/App';
 import reducers from './js/reducers';
@@ -12,7 +13,6 @@ import reducers from './js/reducers';
 const rootEl = document.getElementById('root');
 //const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
-import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(reduxThunk),
