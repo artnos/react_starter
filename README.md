@@ -1,15 +1,45 @@
-## Usage
-1. `git clone https://github.com/artnos/webpack_react_babel_starter.git`
+# React Starter
+
+This is my personal react starter, with packages I frequently use.
+
+## Installation
+
+*Before you install, please remove the packages you won't use in the package.json file.
+I have a breakdown of the packages below.
+
+1. `git clone https://github.com/artnos/react_starter.git`
 2. `npm install`
-3. `npm start`   or `npm run prod`  
+3. `npm start` / `npm run dev`   or `npm run prod`  
   
-`npm run prod`  
-Will write to dist provides no server  
 
-`npm start`
-Will start a server and all changes won't be written to dist.
+### Important Packages 
 
-Requires webpack-dev-server globally to run npm start  
-`npm i -g webpack-dev-server`
+    redux-devtools-extension
+You need to install the chrome dev tools to use
 
-It should automatically open itself
+    webpack-dev-server
+Must be installed globally.
+
+### Optional Packages
+
+`redux` store for large Apps.  
+`redux-form` is a great library to handle forms  
+`redux-thunk` middleware to handle async calls
+
+`globalize` internationalization and localization  
+`moment` is a great library to format time.   
+`react-widgets`,`react-widgets-globalize` and `react-widgets-momment`    
+are used together with the `<Datepicker/>` and other widget    
+
+`firebase` realtime DB  
+ `lodash` js utilities
+ 
+ ### Honrable Mention
+ Not included  
+ `jump.js` screen jump  
+ `acounting.js` math  
+ `redux-promise`
+ 
+## Future
+
+Update starter as new version of Reacts gets released. Catch errors early in a controlled state. Simple scss structure. Link to the repo for easier access.
