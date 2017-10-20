@@ -50,7 +50,7 @@
     "react-widgets-globalize": "~4.0.2",
     "react-widgets-moment": "~4.0.2",
     "redux": "^3.0.4",
-    "redux-form": "~7.0.4",
+    "redux-form": "~7.1.1",
     "redux-thunk": "^2.2.0"
   }
 }
