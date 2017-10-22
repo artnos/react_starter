@@ -25,8 +25,8 @@ Must be installed globally.
 
 `redux` store for large Apps.  
 `redux-form` is a great library to handle forms  
-`redux-thunk` middleware to handle async calls
-
+`redux-thunk` middleware to handle async calls  
+`react-transition-group` animations   
 `globalize` internationalization and localization  
 `moment` is a great library to format time.   
 `react-widgets`,`react-widgets-globalize` and `react-widgets-momment`    

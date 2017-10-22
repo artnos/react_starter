@@ -46,6 +46,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "~5.0.6",
+    "react-transition-group": "~2.2.1",
     "react-widgets": "~4.0.2",
     "react-widgets-globalize": "~4.0.2",
     "react-widgets-moment": "~4.0.2",
