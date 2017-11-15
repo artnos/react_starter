@@ -40,6 +40,7 @@ are used together with the `<Datepicker/>` and other widget
  `jump.js` screen jump  
  `acounting.js` math  
  `redux-promise`
+ `reselect` get the product of two states
  
 ## Future
 
